@@ -1612,7 +1612,7 @@ function EarthDefenseApp() {
   // AI API Configuration - Pre-configured for Gemini 2.5 Pro (Advanced)
   const [aiConfig, setAiConfig] = useState({
     provider: 'gemini',
-    apiKey: 'AIzaSyABlH4jNjas1pl2XZBSSqEsrge2Y-6enHg',
+    apiKey: 'AIzaSyCs_fq2dTyXP0nSVEbe1rGRusqIQ4N7g8Q',
     model: 'gemini-2.5-pro',
     enabled: true
   });
