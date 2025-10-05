@@ -1,0 +1,1987 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #000000;
+  background-image: 
+    /* Deep space with stars */
+    radial-gradient(2px 2px at 20% 30%, #ffffff, transparent),
+    radial-gradient(2px 2px at 40% 70%, #ffffff, transparent),
+    radial-gradient(1px 1px at 90% 40%, #ffffff, transparent),
+    radial-gradient(1px 1px at 60% 10%, #ffffff, transparent),
+    radial-gradient(1px 1px at 10% 80%, #ffffff, transparent),
+    radial-gradient(1px 1px at 80% 20%, #ffffff, transparent),
+    radial-gradient(1px 1px at 30% 50%, #ffffff, transparent),
+    radial-gradient(1px 1px at 70% 90%, #ffffff, transparent),
+    radial-gradient(1px 1px at 15% 15%, #ffffff, transparent),
+    radial-gradient(1px 1px at 85% 85%, #ffffff, transparent),
+    /* Additional star layers */
+    radial-gradient(1px 1px at 25% 75%, #ffffff, transparent),
+    radial-gradient(1px 1px at 75% 25%, #ffffff, transparent),
+    radial-gradient(1px 1px at 50% 10%, #ffffff, transparent),
+    radial-gradient(1px 1px at 50% 90%, #ffffff, transparent),
+    /* Nebula effects in black and white */
+    radial-gradient(ellipse at 20% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+  background-repeat: repeat;
+  background-size: 300px 300px, 200px 200px, 150px 150px, 100px 100px, 80px 80px, 60px 60px, 40px 40px, 30px 30px, 25px 25px, 20px 20px, 180px 180px, 120px 120px, 90px 90px, 70px 70px, 400px 400px, 350px 350px, 300px 300px;
+  color: #f8fafc;
+  overflow-x: hidden;
+  font-weight: 400;
+  line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+  animation: starfield-drift 100s linear infinite;
+}
+
+/* Enhanced Starfield Background Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    /* Multiple layers of stars for depth */
+    radial-gradient(2px 2px at 20% 30%, #ffffff, transparent),
+    radial-gradient(2px 2px at 40% 70%, #ffffff, transparent),
+    radial-gradient(1px 1px at 90% 40%, #ffffff, transparent),
+    radial-gradient(1px 1px at 60% 10%, #ffffff, transparent),
+    radial-gradient(1px 1px at 10% 80%, #ffffff, transparent),
+    radial-gradient(1px 1px at 80% 20%, #ffffff, transparent),
+    radial-gradient(1px 1px at 30% 50%, #ffffff, transparent),
+    radial-gradient(1px 1px at 70% 90%, #ffffff, transparent),
+    radial-gradient(1px 1px at 15% 15%, #ffffff, transparent),
+    radial-gradient(1px 1px at 85% 85%, #ffffff, transparent),
+    /* Distant star clusters */
+    radial-gradient(1px 1px at 25% 75%, #ffffff, transparent),
+    radial-gradient(1px 1px at 75% 25%, #ffffff, transparent),
+    radial-gradient(1px 1px at 50% 10%, #ffffff, transparent),
+    radial-gradient(1px 1px at 50% 90%, #ffffff, transparent);
+  background-repeat: repeat;
+  background-size: 600px 600px, 400px 400px, 300px 300px, 200px 200px, 250px 250px, 350px 350px, 180px 180px, 220px 220px, 150px 150px, 280px 280px, 320px 320px, 380px 380px, 160px 160px, 240px 240px;
+  animation: cosmic-drift 80s linear infinite;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* Twinkling Stars Layer */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    /* Twinkling stars with different sizes */
+    radial-gradient(1px 1px at 20% 30%, #ffffff, transparent),
+    radial-gradient(1px 1px at 40% 70%, #ffffff, transparent),
+    radial-gradient(1px 1px at 90% 40%, #ffffff, transparent),
+    radial-gradient(1px 1px at 60% 10%, #ffffff, transparent),
+    radial-gradient(1px 1px at 10% 80%, #ffffff, transparent),
+    radial-gradient(1px 1px at 80% 20%, #ffffff, transparent),
+    radial-gradient(1px 1px at 30% 50%, #ffffff, transparent),
+    radial-gradient(1px 1px at 70% 90%, #ffffff, transparent),
+    radial-gradient(1px 1px at 15% 15%, #ffffff, transparent),
+    radial-gradient(1px 1px at 85% 85%, #ffffff, transparent),
+    radial-gradient(1px 1px at 25% 75%, #ffffff, transparent),
+    radial-gradient(1px 1px at 75% 25%, #ffffff, transparent),
+    radial-gradient(1px 1px at 50% 10%, #ffffff, transparent),
+    radial-gradient(1px 1px at 50% 90%, #ffffff, transparent),
+    radial-gradient(1px 1px at 35% 65%, #ffffff, transparent),
+    radial-gradient(1px 1px at 65% 35%, #ffffff, transparent);
+  background-repeat: repeat;
+  background-size: 800px 800px, 500px 500px, 400px 400px, 300px 300px, 350px 350px, 450px 450px, 250px 250px, 320px 320px, 200px 200px, 380px 380px, 420px 420px, 480px 480px, 180px 180px, 280px 280px, 360px 360px, 440px 440px;
+  animation: twinkling-stars 4s ease-in-out infinite alternate;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+@keyframes cosmic-drift {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/* Starfield Drift Animation */
+@keyframes starfield-drift {
+  from {
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  to {
+    background-position: 300px 300px, 200px 200px, 150px 150px, 100px 100px, 80px 80px, 60px 60px, 40px 40px, 30px 30px, 25px 25px, 20px 20px, 180px 180px, 120px 120px, 90px 90px, 70px 70px, 400px 400px, 350px 350px, 300px 300px;
+  }
+}
+
+/* Twinkling Stars Animation */
+@keyframes twinkling-stars {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+}
+
+/* Force emoji colors to be white */
+.emoji-white {
+  filter: grayscale(100%) brightness(0) invert(1);
+}
+
+/* Smooth progress bar animation */
+.progress-bar-smooth {
+  transition: width 0.5s ease-out;
+}
+
+/* Enhanced loading animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Smooth backdrop blur */
+.backdrop-blur-smooth {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ffffff, #cccccc);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #cccccc, #999999);
+}
+
+/* Leaflet map customization */
+.leaflet-container {
+  background: #1e293b !important;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.leaflet-tile {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+.leaflet-control-zoom a {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Animation classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Text glow effects */
+.text-glow {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+}
+
+.text-glow-intense {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor,
+    0 0 35px currentColor,
+    0 0 40px currentColor;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+}
+
+/* Button pulse effect */
+.btn-pulse {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 50%;
+  border-top: 2px solid #8b5cf6;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Gradient text animations */
+.gradient-text {
+  background: linear-gradient(-45deg, #ffffff, #cccccc, #999999, #666666, #333333, #111111, #000000);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Stars background effect */
+.stars-bg {
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+    radial-gradient(2px 2px at 40% 70%, #fff, transparent),
+    radial-gradient(1px 1px at 90% 40%, #fff, transparent),
+    radial-gradient(1px 1px at 60% 10%, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  animation: sparkle 20s linear infinite;
+}
+
+@keyframes sparkle {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/* Enhanced interactive elements */
+.interactive-element {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-element:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.interactive-element:active {
+  transform: scale(0.95);
+}
+
+/* Impact Visual Effects */
+.impact-zone-animation {
+  animation: impact-pulse 2s ease-in-out infinite;
+}
+
+@keyframes impact-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+.shockwave-1 {
+  animation: shockwave-expand 3s ease-out infinite;
+}
+
+.shockwave-2 {
+  animation: shockwave-expand 3s ease-out infinite 0.5s;
+}
+
+.shockwave-3 {
+  animation: shockwave-expand 3s ease-out infinite 1s;
+}
+
+@keyframes shockwave-expand {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Dashboard Counter Animations */
+.counter-animate {
+  animation: counter-glow 1s ease-out;
+}
+
+@keyframes counter-glow {
+  0% {
+    text-shadow: 0 0 5px currentColor;
+    transform: scale(0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+    transform: scale(1.1);
+  }
+  100% {
+    text-shadow: 0 0 10px currentColor;
+    transform: scale(1);
+  }
+}
+
+/* Threat Level Animations */
+.threat-critical {
+  animation: critical-flash 1s ease-in-out infinite;
+}
+
+@keyframes critical-flash {
+  0%, 100% {
+    background-color: rgba(239, 68, 68, 0.2);
+  }
+  50% {
+    background-color: rgba(239, 68, 68, 0.4);
+  }
+}
+
+/* 3D Globe Effects */
+.globe-marker-pulse {
+  animation: globe-pulse 2s ease-in-out infinite;
+}
+
+@keyframes globe-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Screen Shake Effect */
+.screen-shake {
+  animation: screen-shake 0.5s ease-in-out;
+}
+
+@keyframes screen-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+/* Particle Effects */
+.particle-explosion {
+  position: absolute;
+  pointer-events: none;
+  animation: particle-burst 2s ease-out forwards;
+}
+
+@keyframes particle-burst {
+  0% {
+    opacity: 1;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.5) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3) rotate(360deg);
+  }
+}
+
+/* Enhanced Map Styles */
+.leaflet-container {
+  background: #0a0a0b !important;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.leaflet-tile {
+  filter: brightness(0.8) contrast(1.2);
+  transition: filter 0.3s ease;
+}
+
+/* Impact Visualization Enhancements */
+.impact-marker {
+  animation: impact-marker-pulse 1s ease-in-out infinite;
+}
+
+@keyframes impact-marker-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px #ff0000);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px #ff0000) drop-shadow(0 0 25px #ff0000);
+  }
+}
+
+/* Defense System Animations */
+.defense-path {
+  animation: defense-laser 2s ease-in-out infinite;
+}
+
+@keyframes defense-laser {
+  0%, 100% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 5px #ffffff);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 15px #ffffff) drop-shadow(0 0 25px #ffffff);
+  }
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .text-6xl {
+    font-size: 3rem;
+  }
+  
+  .text-8xl {
+    font-size: 4rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .text-6xl {
+    font-size: 2.5rem;
+  }
+  
+  .text-8xl {
+    font-size: 3rem;
+  }
+  
+  .text-xl {
+    font-size: 1rem;
+  }
+}
+
+/* ======= NSSC-STYLE COSMIC BACKGROUND ANIMATIONS ======= */
+
+/* NSSC-style cosmic nebula effect */
+.nssc-nebula {
+  background: radial-gradient(ellipse at center, 
+    rgba(26, 26, 46, 0.8) 0%, 
+    rgba(22, 33, 62, 0.6) 25%, 
+    rgba(15, 52, 96, 0.4) 50%, 
+    rgba(0, 0, 0, 0.2) 75%, 
+    transparent 100%);
+  animation: nebula-pulse 8s ease-in-out infinite;
+}
+
+@keyframes nebula-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+/* NSSC-style cosmic dust particles */
+.nssc-cosmic-dust {
+  background-image: 
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 90% 40%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 60% 10%, rgba(255, 255, 255, 0.3), transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px, 150px 150px, 100px 100px, 120px 120px;
+  animation: cosmic-dust-drift 40s linear infinite;
+}
+
+@keyframes cosmic-dust-drift {
+  from {
+    transform: translateY(0px) translateX(0px);
+  }
+  to {
+    transform: translateY(-100vh) translateX(50px);
+  }
+}
+
+/* NSSC-style shooting star with enhanced trail */
+@keyframes nssc-shooting-star {
+  0% {
+    transform: translate3d(-200px, -200px, 0) scale(0);
+    opacity: 0;
+  }
+  5% {
+    transform: translate3d(-100px, -100px, 0) scale(1);
+    opacity: 1;
+  }
+  80% {
+    transform: translate3d(400px, 400px, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(500px, 500px, 0) scale(0);
+    opacity: 0;
+  }
+}
+
+/* NSSC-style cosmic glow effect */
+.nssc-cosmic-glow {
+  background: radial-gradient(ellipse at center, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(200, 200, 200, 0.05) 30%, 
+    transparent 70%);
+  animation: cosmic-glow-pulse 6s ease-in-out infinite;
+}
+
+@keyframes cosmic-glow-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+/* NSSC-style professional space typography */
+.nssc-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ffffff, #60a5fa, #a78bfa, #ffffff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: nssc-title-glow 4s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+}
+
+@keyframes nssc-title-glow {
+  0%, 100% {
+    background-position: 0% 50%;
+    text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 0 0 30px rgba(96, 165, 250, 0.8);
+  }
+}
+
+/* NSSC-style subtitle */
+.nssc-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  text-shadow: 0 0 10px rgba(148, 163, 184, 0.3);
+}
+
+/* NSSC-style cosmic grid overlay */
+.nssc-cosmic-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: cosmic-grid-move 30s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes cosmic-grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+/* NSSC-style floating cosmic elements */
+.nssc-floating-element {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: nssc-float 12s ease-in-out infinite;
+}
+
+@keyframes nssc-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) scale(1.1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) translateX(-15px) scale(0.9);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-30px) translateX(5px) scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+/* Shooting Star Animation - Hardware Accelerated */
+@keyframes shooting-star {
+  0% {
+    transform: translate3d(-100px, -100px, 0) scale(0);
+    opacity: 1;
+  }
+  10% {
+    transform: translate3d(-50px, -50px, 0) scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: translate3d(300px, 300px, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(400px, 400px, 0) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Floating Animation for Space Particles - Optimized */
+@keyframes animate-float {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate3d(-5px, -20px, 0) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+/* Radial Gradient for Cosmic Effects */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+}
+
+/* Performance Optimizations */
+.hardware-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.reduce-motion {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Twinkling Stars */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+/* Nebula Drift Animation */
+@keyframes nebula-drift {
+  0% {
+    transform: translateX(-50px) translateY(-30px) rotate(0deg);
+  }
+  33% {
+    transform: translateX(30px) translateY(-50px) rotate(120deg);
+  }
+  66% {
+    transform: translateX(-20px) translateY(40px) rotate(240deg);
+  }
+  100% {
+    transform: translateX(-50px) translateY(-30px) rotate(360deg);
+  }
+}
+
+.animate-nebula {
+  animation: nebula-drift 20s ease-in-out infinite;
+}
+
+/* Cosmic Dust Animation */
+@keyframes cosmic-dust {
+  0% {
+    opacity: 0.1;
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translateY(-20px) scale(1.1);
+  }
+  100% {
+    opacity: 0.1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.animate-cosmic-dust {
+  animation: cosmic-dust 8s ease-in-out infinite;
+}
+
+/* Parallax Stars */
+.parallax-stars-slow {
+  animation: parallax-drift 30s linear infinite;
+}
+
+.parallax-stars-medium {
+  animation: parallax-drift 20s linear infinite;
+}
+
+.parallax-stars-fast {
+  animation: parallax-drift 10s linear infinite;
+}
+
+@keyframes parallax-drift {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+/* Pulsing Space Elements */
+@keyframes space-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+    filter: blur(1px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+    filter: blur(0px);
+  }
+}
+
+.animate-space-pulse {
+  animation: space-pulse 4s ease-in-out infinite;
+}
+
+/* Aurora Effect */
+@keyframes aurora {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateX(-50px) skewX(-5deg);
+  }
+  25% {
+    opacity: 0.7;
+    transform: translateX(30px) skewX(5deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-20px) skewX(-3deg);
+  }
+  75% {
+    opacity: 0.8;
+    transform: translateX(40px) skewX(7deg);
+  }
+}
+
+.animate-aurora {
+  animation-name: aurora;
+  animation-duration: 15s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Glow Effects for Space Elements */
+.space-glow {
+  filter: drop-shadow(0 0 6px rgba(147, 197, 253, 0.6)) 
+          drop-shadow(0 0 12px rgba(147, 197, 253, 0.4))
+          drop-shadow(0 0 18px rgba(147, 197, 253, 0.2));
+}
+
+.star-glow {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 1)) 
+          drop-shadow(0 0 12px rgba(255, 255, 255, 0.8))
+          drop-shadow(0 0 18px rgba(255, 255, 255, 0.6))
+          drop-shadow(0 0 24px rgba(255, 255, 255, 0.4));
+}
+
+/* Professional Gaming UI Elements */
+.glass-morphism {
+  background: rgba(30, 41, 59, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.space-card {
+  background: linear-gradient(135deg, 
+    rgba(30, 41, 59, 0.4) 0%, 
+    rgba(51, 65, 85, 0.3) 50%, 
+    rgba(15, 23, 42, 0.5) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.space-card:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+}
+
+/* Floating Animation for Space Debris */
+@keyframes space-debris {
+  0% {
+    transform: translateX(-100px) translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px)) translateY(-50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-space-debris {
+  animation: space-debris 25s linear infinite;
+}
+
+/* ======= GAMIFIED TYPOGRAPHY SYSTEM ======= */
+
+/* Arcade-Style Main Title - Clean and Bold */
+.gaming-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 
+    2px 2px 0px #000000,
+    4px 4px 0px #333333;
+  animation: none;
+}
+
+/* Arcade-Style Subtitle - Clean and Modern */
+.gaming-subtitle {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  text-shadow: 
+    1px 1px 0px #374151,
+    2px 2px 0px #1f2937;
+  animation: none;
+}
+
+/* Arcade-Style Card Title - Clean and Bold */
+.gaming-card-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fbbf24;
+  text-shadow: 
+    1px 1px 0px #d97706,
+    2px 2px 0px #b45309;
+  animation: none;
+}
+
+/* Gaming Label - Clean and Readable */
+.gaming-label {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #e5e7eb;
+  text-shadow: 
+    1px 1px 0px #374151,
+    2px 2px 0px #1f2937;
+}
+
+/* Gaming Data Display - Monospace and Bold - Clean Theme */
+.gaming-data {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 
+    1px 1px 0px #cccccc,
+    2px 2px 0px #999999;
+}
+
+/* Removed gaming-data-pulse animation */
+
+/* Gaming Status Text - Clean Theme */
+.gaming-status {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 
+    1px 1px 0px #cccccc,
+    2px 2px 0px #999999;
+}
+
+/* Removed gaming-status-blink animation */
+
+/* Gaming Alert Text - Clean Theme */
+.gaming-alert-text {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 
+    2px 2px 0px #cccccc,
+    4px 4px 0px #999999;
+}
+
+/* Removed gaming-alert-flash animation */
+
+/* Gaming Button Text - Bold and Action-oriented */
+.gaming-button-text {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 
+    1px 1px 0px #000000,
+    2px 2px 0px #333333;
+}
+
+/* Gaming Info Text - Clean and Informative */
+.gaming-info {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #d1d5db;
+  text-shadow: 
+    1px 1px 0px #374151;
+}
+
+/* Gaming HUD Text - Clean Theme */
+.gaming-hud {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 
+    1px 1px 0px #cccccc;
+}
+
+/* Removed gaming-hud-scan animation */
+
+/* Gaming Progress Text - Clean Theme */
+.gaming-progress-text {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 
+    1px 1px 0px #cccccc,
+    2px 2px 0px #999999;
+}
+
+/* Removed gaming-progress-glow animation */
+
+/* Gaming Description Text - Readable but Styled */
+.gaming-description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #9ca3af;
+  text-shadow: 
+    1px 1px 0px #374151;
+  line-height: 1.6;
+}
+
+/* Gaming Phase Text - Dynamic Status Display */
+.gaming-phase {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f59e0b;
+  text-shadow: 
+    0 0 8px currentColor,
+    1px 1px 0px #d97706,
+    2px 2px 0px #b45309;
+  animation: gaming-phase-pulse 2s ease-in-out infinite;
+}
+
+@keyframes gaming-phase-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* Main Title Font - Clean and Modern */
+.title-font {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Subtitle Font - Professional Gaming Style */
+.subtitle-font {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Heading Font - Clean Tech Style */
+.heading-font {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Body Text Font - Clean and Modern */
+.body-font {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+}
+
+/* Number/Data Font - Monospace for Technical Look */
+.data-font {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Button Font - Professional and Action-Oriented */
+.button-font {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Gaming HUD Font - Clean Tech Style */
+.hud-font {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Status/Alert Font - High Contrast */
+.status-font {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Code/Technical Font */
+.tech-font {
+  font-family: 'JetBrains Mono', 'Inter', monospace;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Clean Text Effects */
+.text-gaming-glow {
+  text-shadow: 
+    1px 1px 0px #cccccc,
+    2px 2px 0px #999999;
+}
+
+/* Removed gaming-text-pulse animation */
+
+/* Clean Holographic Text Effect */
+.text-holographic {
+  color: #ffffff;
+  text-shadow: 
+    1px 1px 0px #cccccc,
+    2px 2px 0px #999999;
+}
+
+/* Removed holographic-shift animation */
+
+/* Clean Cyber Text Effect */
+.text-cyber {
+  font-family: 'Orbitron', monospace;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-shadow: 
+    1px 1px 0px #cccccc,
+    2px 2px 0px #999999;
+}
+
+/* Removed cyber-glitch animation */
+
+/* Clean Matrix-style Text */
+.text-matrix {
+  font-family: 'Courier New', monospace;
+  color: #ffffff;
+  text-shadow: 
+    1px 1px 0px #cccccc,
+    2px 2px 0px #999999;
+}
+
+/* Removed matrix-flicker animation */
+
+/* ======= ADVANCED GAMING UI ELEMENTS ======= */
+
+/* Optimized Gaming Card */
+.gaming-card {
+  background: linear-gradient(135deg, 
+    rgba(20, 20, 30, 0.95) 0%, 
+    rgba(30, 30, 50, 0.9) 50%, 
+    rgba(10, 10, 20, 0.95) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.gaming-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(255, 255, 255, 0.05) 0%, 
+    rgba(200, 200, 200, 0.05) 50%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  animation: gaming-border-flow 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes gaming-border-flow {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+/* Hexagonal Gaming Button */
+.gaming-button {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 25%, 100% 75%, 90% 100%, 10% 100%, 0% 75%, 0% 25%);
+}
+
+.gaming-button:hover {
+  background: linear-gradient(135deg, #0f3460, #16213e, #1a1a2e);
+  border-color: #ff00ff;
+  color: #ff00ff;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.gaming-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.gaming-button:hover::before {
+  left: 100%;
+}
+
+/* HUD-style Panel */
+.hud-panel {
+  background: linear-gradient(135deg, 
+    rgba(0, 20, 40, 0.9) 0%, 
+    rgba(10, 30, 60, 0.85) 50%, 
+    rgba(0, 15, 30, 0.9) 100%);
+  border: 1px solid #ffffff;
+  border-left: 4px solid #ffffff;
+  border-right: 4px solid #cccccc;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.hud-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ffffff, #cccccc, #999999, #666666);
+  animation: hud-scan 2s linear infinite;
+}
+
+@keyframes hud-scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Gaming Progress Bar */
+.gaming-progress {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gaming-progress-fill {
+  background: linear-gradient(90deg, #ffffff, #cccccc, #999999, #666666);
+  height: 100%;
+  position: relative;
+  animation: gaming-progress-pulse 1s ease-in-out infinite alternate;
+}
+
+.gaming-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    transparent 100%);
+  animation: gaming-progress-sweep 2s linear infinite;
+}
+
+@keyframes gaming-progress-pulse {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(1.3); }
+}
+
+@keyframes gaming-progress-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Holographic Display */
+.holographic-display {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 1px 1px 0px #cccccc;
+  position: relative;
+  animation: holographic-flicker 0.1s infinite linear;
+}
+
+@keyframes holographic-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.95; }
+}
+
+/* Gaming Alert Box */
+.gaming-alert {
+  background: linear-gradient(135deg, 
+    rgba(255, 0, 0, 0.2) 0%, 
+    rgba(255, 100, 0, 0.15) 50%, 
+    rgba(255, 0, 0, 0.2) 100%);
+  border: 2px solid #ff0000;
+  border-left: 6px solid #ff0000;
+  animation: gaming-alert-pulse 1s ease-in-out infinite;
+}
+
+@keyframes gaming-alert-pulse {
+  0%, 100% { 
+    border-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+  }
+  50% { 
+    border-color: #ff6600;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+  }
+}
+
+/* Sci-Fi Input Fields */
+.gaming-input {
+  background: rgba(0, 20, 40, 0.8);
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  color: #ffffff;
+  padding: 12px 16px;
+  font-family: 'Orbitron', monospace;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.gaming-input:focus {
+  border-color: #ff00ff;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+  background: rgba(0, 30, 60, 0.9);
+}
+
+/* Gaming Tab Style */
+.gaming-tab {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 1px solid #ffffff;
+  border-bottom: none;
+  color: #ffffff;
+  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  transition: all 0.3s ease;
+}
+
+.gaming-tab:hover {
+  background: linear-gradient(135deg, #16213e, #0f3460);
+  color: #cccccc;
+  border-color: #cccccc;
+  transform: translateY(-2px);
+}
+
+.gaming-tab.active {
+  background: linear-gradient(135deg, #0f3460, #1a1a2e);
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Circuit Board Pattern */
+.circuit-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, #ffffff 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, #cccccc 1px, transparent 1px),
+    linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.1) 26%, transparent 27%, transparent 74%, rgba(200, 200, 200, 0.1) 75%, rgba(200, 200, 200, 0.1) 76%, transparent 77%);
+  background-size: 50px 50px, 25px 25px, 50px 50px;
+  animation: circuit-flow 10s linear infinite;
+}
+
+@keyframes circuit-flow {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 50px 50px, 25px 25px, 50px 50px; }
+}
+
+/* Gaming Badge/Indicator */
+.gaming-badge {
+  background: linear-gradient(45deg, #ff0080, #0080ff);
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: gaming-badge-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes gaming-badge-glow {
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
+}
+
+/* Cyber Grid Overlay */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: cyber-grid-move 20s linear infinite;
+}
+
+@keyframes cyber-grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}
+
+/* Gaming Tooltip */
+.gaming-tooltip {
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  color: #ffffff;
+  font-family: 'Orbitron', monospace;
+  font-size: 12px;
+  padding: 8px 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* ======= ENHANCED SPACE GAMING THEME ======= */
+
+/* Space Command Center Background - Enhanced Starfield */
+.space-command-center {
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%),
+    radial-gradient(ellipse at center, rgba(255, 255, 255, 0.02) 0%, transparent 70%),
+    /* Additional starfield layer */
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 90% 40%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 60% 10%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 10% 80%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 80% 20%, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 100% 100%, 100% 100%, 200px 200px, 150px 150px, 100px 100px, 80px 80px, 60px 60px, 40px 40px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.space-command-center::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.01) 50%, transparent 70%),
+    linear-gradient(-45deg, transparent 30%, rgba(255, 255, 255, 0.01) 50%, transparent 70%);
+  animation: space-scan 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes space-scan {
+  0% { transform: translateX(-100%) translateY(-100%); }
+  100% { transform: translateX(100%) translateY(100%); }
+}
+
+/* Space Station Panel - Black & White Theme */
+.space-station-panel {
+  background: 
+    linear-gradient(135deg, 
+      rgba(10, 10, 10, 0.95) 0%, 
+      rgba(20, 20, 20, 0.9) 50%, 
+      rgba(5, 5, 5, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 4px solid rgba(255, 255, 255, 0.5);
+  border-right: 4px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  backdrop-filter: blur(8px);
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.05),
+    inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+
+.space-station-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.6) 20%, 
+    rgba(255, 255, 255, 0.8) 50%, 
+    rgba(255, 255, 255, 0.6) 80%, 
+    transparent 100%);
+  animation: panel-scan 3s linear infinite;
+}
+
+@keyframes panel-scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Space Mission Card - Black & White Theme */
+.space-mission-card {
+  background: 
+    linear-gradient(135deg, 
+      rgba(15, 15, 15, 0.9) 0%, 
+      rgba(25, 25, 25, 0.85) 50%, 
+      rgba(10, 10, 10, 0.9) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.space-mission-card:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 0 30px rgba(255, 255, 255, 0.1),
+    0 10px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.space-mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+  animation: mission-glow 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes mission-glow {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+/* Space Data Display - Black & White Theme */
+.space-data-display {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px currentColor;
+  position: relative;
+  overflow: hidden;
+}
+
+.space-data-display::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.05) 50%, 
+    transparent 100%);
+  animation: data-flow 2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes data-flow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Space Alert System */
+.space-alert {
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 0, 0, 0.2) 0%, 
+      rgba(255, 100, 0, 0.15) 50%, 
+      rgba(255, 0, 0, 0.2) 100%);
+  border: 2px solid #ff0000;
+  border-left: 6px solid #ff0000;
+  color: #ff0000;
+  text-shadow: 0 0 10px currentColor;
+  animation: space-alert-pulse 1s ease-in-out infinite;
+  position: relative;
+}
+
+.space-alert::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    transparent 0%, 
+    rgba(255, 0, 0, 0.1) 50%, 
+    transparent 100%);
+  animation: alert-scan 1.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes space-alert-pulse {
+  0%, 100% { 
+    border-color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+  }
+  50% { 
+    border-color: #ff6600;
+    box-shadow: 0 0 25px rgba(255, 102, 0, 0.6);
+  }
+}
+
+@keyframes alert-scan {
+  0% { transform: translateX(-100%) translateY(-100%); }
+  100% { transform: translateX(100%) translateY(100%); }
+}
+
+/* Space Navigation Button - Black & White Theme */
+.space-nav-button {
+  background: 
+    linear-gradient(135deg, 
+      rgba(20, 20, 20, 0.8) 0%, 
+      rgba(30, 30, 30, 0.9) 50%, 
+      rgba(10, 10, 10, 0.8) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px currentColor;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 25%, 100% 75%, 90% 100%, 10% 100%, 0% 75%, 0% 25%);
+}
+
+.space-nav-button:hover {
+  background: 
+    linear-gradient(135deg, 
+      rgba(40, 40, 40, 0.8) 0%, 
+      rgba(50, 50, 50, 0.9) 50%, 
+      rgba(30, 30, 30, 0.8) 100%);
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+  text-shadow: 0 0 12px currentColor;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.space-nav-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent);
+  transition: left 0.5s;
+}
+
+.space-nav-button:hover::before {
+  left: 100%;
+}
+
+/* Space Status Indicator */
+.space-status-indicator {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  position: relative;
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+.space-status-indicator.online {
+  border-color: rgba(0, 255, 0, 0.6);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+}
+
+.space-status-indicator.warning {
+  border-color: rgba(255, 255, 0, 0.6);
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.4);
+}
+
+.space-status-indicator.danger {
+  border-color: rgba(255, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+@keyframes status-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Space Progress Bar - Black & White Theme */
+.space-progress-bar {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0;
+  height: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.space-progress-fill {
+  background: linear-gradient(90deg, 
+    #ffffff 0%, 
+    #cccccc 25%, 
+    #999999 50%, 
+    #666666 75%, 
+    #333333 100%);
+  height: 100%;
+  position: relative;
+  animation: space-progress-glow 2s ease-in-out infinite alternate;
+}
+
+.space-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.4) 50%, 
+    transparent 100%);
+  animation: space-progress-sweep 3s linear infinite;
+}
+
+@keyframes space-progress-glow {
+  0% { filter: brightness(1); }
+  100% { filter: brightness(1.5); }
+}
+
+@keyframes space-progress-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Space Terminal */
+.space-terminal {
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.space-terminal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(0, 255, 0, 0.05) 50%, transparent 100%),
+    linear-gradient(0deg, transparent 0%, rgba(0, 255, 0, 0.02) 50%, transparent 100%);
+  animation: terminal-scan 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes terminal-scan {
+  0% { transform: translateX(-100%) translateY(-100%); }
+  100% { transform: translateX(100%) translateY(100%); }
+}
+
+/* Space Grid Overlay - Enhanced Starfield */
+.space-grid-overlay {
+  background-image: 
+    /* Grid lines */
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    /* Additional starfield */
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 90% 40%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 60% 10%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 10% 80%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 80% 20%, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 40px 40px, 40px 40px, 100px 100px, 80px 80px, 60px 60px, 50px 50px, 40px 40px, 30px 30px;
+  animation: space-grid-move 20s linear infinite;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+@keyframes space-grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+/* Space Particle Effects */
+.space-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation-name: space-particle-drift;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 0.6;
+}
+
+@keyframes space-particle-drift {
+  0% {
+    transform: translateY(100vh) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+/* Space Debris Animation */
+.space-debris {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(45deg, #ff6600, #ff0000);
+  border-radius: 2px;
+  animation: space-debris-drift 25s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes space-debris-drift {
+  0% {
+    transform: translateX(-100px) translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px)) translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Orbitron Bold with Orange/Pink Gradient - Large Display */
+.ethnocentric-gradient {
+  font-family: 'Orbitron', 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 5.5rem;
+  line-height: 1.0;
+  background: linear-gradient(90deg, #ff6b35, #ff8c42, #ff6b9d, #ff1493);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite;
+  text-shadow: none;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Eurostile Extended Medium for Subtitle */
+.eurostile-subtitle {
+  font-family: 'Orbitron', 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
